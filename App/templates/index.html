@@ -1,0 +1,1146 @@
+{% extends "base.html" %}
+
+{% block start %}
+    <!-- Banner Section -->
+    <section class="bannerSection bgImgProperty">
+        <div class="bannerBg">
+            {% comment %} <img src="static/images/smBanner.png" alt="#" loading="lazy" class="imgWH-100"> {% endcomment %}
+            <img src="{{ banner.banner_image_mobile.url }}" alt="{{banner.image_alt_text|safe}}" loading="lazy" class="imgWH-100">
+        </div>
+        <div class="bannerCont">
+            <div class="container">
+                <div class="innerDiv">
+                    <h1 class="capitalize colorWhite fw800 mbtm40 w66 fsth1">
+                        {{banner.banner_main_text_part_one|safe}} <span class="colorYellow" id="elementHome"></span> {{banner.banner_main_text_part_two|safe}}
+                    </h1>
+                    <h1 class="capitalize colorWhite fw800 mbtm40 w66 sech1">
+                        {{banner.banner_main_text_part_one|safe}} <span class="colorYellow">{{banner.banner_main_text_anime|safe}}</span> {{banner.banner_main_text_part_two|safe}}
+                    </h1>
+                    <p class="colorWhite f20 fw300 lineHeight32 mbtm40 w80">
+                        {% comment %} Ready to take off your business in the digital world?
+                        We are the SEO pros, make your brands go viral,
+                        and offer strategies that skyrocket your ROI.
+                        Wait no more, Let’s Roar Together! {% endcomment %}
+                        {{ banner.banner_sub_text|safe }}
+                    </p>
+                    <div class="twoBtns">
+                        <a href="#about-black-tiger-section" class="fw600 f20 capitalize colorBlack btn btn1 bgYellow">{{ banner.button_text|safe }}
+                            <span><i class="fa-solid fa-angle-right alignPadding"></i></span>
+                        </a>
+                        <div class="smVideoBtn hideDiv2">
+                            <button type="button" class="playPulse" data-bs-toggle="modal" data-bs-target="#videoModal">
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="videoBtn hideDiv">
+            <div class="container">
+                <button type="button" class="playPulse" data-bs-toggle="modal" data-bs-target="#videoModal">
+                    <i class="fa-solid fa-play"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        @media (min-width: 768px) and (max-width: 991px) {
+            .bannerSection {
+                background-image: url({{banner.banner_image_tablet.url}});
+                padding: 180px 0;
+                background-position-x: 62%;
+            }
+        
+            .bannerSection .bannerCont .innerDiv {
+                width: 84%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .bannerSection {
+                background-image: url({{banner.banner_image_desktop.url}});
+            }
+        
+            .hideDiv2,
+            .sech1 {
+                display: none;
+            }
+        }
+    </style>
+
+    <script>
+                // Index Page banner tiger word animation
+        var typed = new Typed('#elementHome', {
+            strings: ['{{banner.banner_main_text_anime}}'],
+            typeSpeed: 200,
+            loop: true,
+            backSpeed: 200,
+            showCursor: false,
+        });
+    </script>
+    <!-- Banner Section End -->
+
+
+   
+
+    <!-- Digital Agency Section -->
+    <section class="digitalAgencyArea bgImgProperty" style="background-image: url(static/images/bg-line1.png);">
+        <div class="container" id ="about-black-tiger-section">
+            <div class="digiCont text-center">
+                <p class="bgYellow colorBlack f28 fw700 capitalize colorBgTitle">black tiger</p>
+                <h2 class="capitalize colorBlack fw800 mbtm40">digital agency UK</h2>
+                <h3 class="f28 fw700 colorBlack mbtm40">
+                    Twists, Turns, and Tweets – We Roll with Your Last-Minute Feats!
+                </h3>
+                <p class="p1 colorBlack f20 fw500 text-start">
+                    Black Tiger Advertising began as a family business offering quality advertising as well as Website
+                    Development UK Services and evantually it became a real business with time having many more members.
+                    Yes, we are more than a business or a company, we are a big, united and professional family. It is
+                    our passion to solve real time business problems of our clients and Team BBTAA is very good in doing
+                    that.
+                </p>
+                <p class="colorBlack f20 fw600">Call Us or WhatsApp Now at</p>
+                <ul class="resetUl d-flex align-items-center justify-content-center gap-3">
+                    <li>
+                        <div class="wpIcon">
+                            <img src="static/images/what's app icon-10.svg" alt="#" loading="lazy" class="imgWH-100">
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="colorBlack fw700 f28">+447399 646 815</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- Digital Agency Section End -->
+
+
+    <!-- Services Section -->
+    <section class="servicesSection bgImgProperty" style="background-image: url(static/images/bg-lines-2.png);">
+        <div class="container">
+            <div class="rightPot">
+                <div class="potImg pbtm100">
+                    <img src="static/images/pot-1.png" alt="#" loading="lazy" class="imgWH-100">
+                </div>
+            </div>
+            <div class="serviceCont">
+                <div class="leftCont">
+                    <h2 class="capitalize mb-0">
+                        <span class="colorGray fw400">our</span>
+                        <span class="colorBlack fw800">Services</span>
+                    </h2>
+                </div>
+                <div class="rightCont">
+                    <div class="cardsArea">
+                        <div class="cardItem">
+                            <div class="cardImg mbtm40">
+                                <img src="static/images/service-card-1.jpg" alt="#" loading="lazy" class="imgWH-100">
+                            </div>
+                            <div class="textCont">
+                                <p class="capitalize colorGray f28 mb-0">graphics</p>
+                                <h3 class="h3 capitalize colorBlack fw700 mb-0">designing</h3>
+                            </div>
+                        </div>
+                        <div class="cardItem">
+                            <div class="cardImg mbtm40">
+                                <img src="static/images/service-card-2.jpg" alt="#" loading="lazy" class="imgWH-100">
+                            </div>
+                            <div class="textCont">
+                                <p class="capitalize colorGray f28 mb-0">website</p>
+                                <h3 class="h3 capitalize colorBlack fw700 mb-0">development</h3>
+                            </div>
+                        </div>
+                        <div class="cardItem">
+                            <div class="cardImg mbtm40">
+                                <img src="static/images/service-card-3.jpg" alt="#" loading="lazy" class="imgWH-100">
+                            </div>
+                            <div class="textCont">
+                                <p class="capitalize colorGray f28 mb-0">digital</p>
+                                <h3 class="h3 capitalize colorBlack fw700 mb-0">marketing</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+
+
+    <!-- Development Section -->
+    <section class="developmentSection bgImgProperty ptop100 pbtm100">
+        <div class="container">
+            <div class="devCont">
+                <div class="headingArea text-center">
+                    <p class="bgYellow colorBlack f28 fw700 capitalize colorBgTitle">mobile application</p>
+                    <h2 class="capitalize colorWhite fw800 mbtm40">development</h2>
+                    <p class="p1 colorWhite fw300 text-start">
+                        Since we have a team of exceptional mobile application experts, they will definitely make sure
+                        to deliver you a state-of-the art app that will satisfy your requirements perfectly.
+                    </p>
+                </div>
+                <div class="rightCont">
+                    <ul class="resetUl outerUl">
+                        <li>
+                            <ul class="resetUl d-flex align-items-start gap-4">
+                                <li>
+                                    <div class="iconImg">
+                                        <img src="static/images/dev-icon-12.svg" alt="#" loading="lazy" class="imgWH-100">
+                                    </div>
+                                </li>
+                                <li>
+                                    <h3 class="colorWhite capitalize">UI/UX design</h3>
+                                    <p class="colorWhite fw300 mb-0">
+                                        Black Tiger Advertising (BBTAA) creates cool & trendy designs
+                                        with the help of latest designing tools.
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="resetUl d-flex align-items-start gap-4">
+                                <li>
+                                    <div class="iconImg">
+                                        <img src="static/images/dev-icon-13.svg" alt="#" loading="lazy" class="imgWH-100">
+                                    </div>
+                                </li>
+                                <li>
+                                    <h3 class="colorWhite capitalize">redefine user experience</h3>
+                                    <p class="colorWhite fw300 mb-0">
+                                        BBTAA ensures to redefine user experience to help your app to become the latest
+                                        trend of the market.
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="resetUl d-flex align-items-start gap-4">
+                                <li>
+                                    <div class="iconImg">
+                                        <img src="static/images/dev-icon-14.svg" alt="#" loading="lazy" class="imgWH-100">
+                                    </div>
+                                </li>
+                                <li>
+                                    <h3 class="colorWhite capitalize">support</h3>
+                                    <p class="colorWhite fw300 mb-0">
+                                        BBTAA provides full customer support for not only the entire development process
+                                        but also answer all the queries even after project completion.
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="resetUl d-flex align-items-start gap-4">
+                                <li>
+                                    <div class="iconImg">
+                                        <img src="static/images/dev-icon-15.svg" alt="#" loading="lazy" class="imgWH-100">
+                                    </div>
+                                </li>
+                                <li>
+                                    <h3 class="colorWhite capitalize">
+                                        Requirement Listing
+                                    </h3>
+                                    <p class="colorWhite fw300 mb-0">
+                                        Listing all your requirements is the basic step in the process of mobile app
+                                        development & BBTAA does it very efficiently.
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="resetUl d-flex align-items-start gap-4">
+                                <li>
+                                    <div class="iconImg">
+                                        <img src="static/images/dev-icon-16.svg" alt="#" loading="lazy" class="imgWH-100">
+                                    </div>
+                                </li>
+                                <li>
+                                    <h3 class="colorWhite capitalize">Functionality</h3>
+                                    <p class="colorWhite fw300 mb-0">
+                                        We know that an app is not all about its looks but needs a solid functionality &
+                                        thus, BBTAA makes sure to build a strong backend for every app that we build.
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="resetUl d-flex align-items-start gap-4">
+                                <li>
+                                    <div class="iconImg">
+                                        <img src="static/images/dev-icon-17.svg" alt="#" loading="lazy" class="imgWH-100">
+                                    </div>
+                                </li>
+                                <li>
+                                    <h3 class="colorWhite capitalize">Data Security</h3>
+                                    <p class="colorWhite fw300 mb-0">
+                                        Securing data is a very crucial factor & BBTAA makes sure to secure your data to
+                                        have you a worry-free experience.
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Development Section End -->
+
+
+    <!-- Core Services Section -->
+    <section class="coreServiceSection ptop100 pbtm100 bgLightGray">
+        <div class="container">
+            <div class="counterCont d-flex align-items-center justify-content-between flex-wrap bgWhite mbtm100">
+                <div class="expBox">
+                    <div class="iconCont">
+                        <span><i class="fa-regular fa-thumbs-up"></i></span>
+                    </div>
+                    <div class="textCont">
+                        <p class="p1 m-0" id="example" data-counter-target="5">0</p>
+                        <span class="capitalize fw600">years experience</span>
+                    </div>
+                </div>
+                <div class="expBox">
+                    <div class="iconCont">
+                        <span><i class="fa-solid fa-building-shield"></i></span>
+                    </div>
+                    <div class="textCont">
+                        <p class="p1 m-0" id="example" data-counter-target="498562">0</p>
+                        <span class="capitalize fw600">leads Generated</span>
+                    </div>
+                </div>
+                <div class="expBox">
+                    <div class="iconCont">
+                        <span><i class="fa-regular fa-face-laugh-beam"></i></span>
+                    </div>
+                    <div class="textCont">
+                        <p class="p1 m-0" id="example" data-counter-target="2349">0</p>
+                        <span class="capitalize fw600">happy customer</span>
+                    </div>
+                </div>
+                <div class="expBox">
+                    <div class="iconCont">
+                        <span><i class="fa-solid fa-trophy"></i></span>
+                    </div>
+                    <div class="textCont">
+                        <p class="p1 m-0" id="example" data-counter-target="15">0</p>
+                        <span class="capitalize fw600">Awards Won</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="headingArea text-center">
+                <p class="bgYellow colorBlack f28 fw700 colorBgTitle">Black Tiger's</p>
+                <h2 class="capitalize colorBlack fw800 mbtm40">core Services</h2>
+            </div>
+            <div class="row gx-3 gy-4 justify-content-center" >
+                <div class="col-lg-4 col-md-6">
+                    <div class="cardItem">
+                        <div class="text-center">
+                            <div class="boxBorder">
+                                <div class="iconArea">
+                                    <img src="static/images/icon-19.svg" alt="#" loading="lazy" class="imgWH-100 iconImg1">
+                                    <img src="static/images/icon-25.svg" alt="#" loading="lazy" class="imgWH-100 iconImg2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="textCont">
+                            <h3 class="colorBlack capitalize fw700 mb-3">web designing & development</h3>
+                            <p class="colorBlack fw500 m-0">
+                                Our web developers are trained to produce websites which are a perfect combination of
+                                appealing visuals & user-friendly interface.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="cardItem">
+                        <div class="text-center">
+                            <div class="boxBorder">
+                                <div class="iconArea">
+                                    <img src="static/images/icon-20.svg" alt="#" loading="lazy" class="imgWH-100 iconImg1">
+                                    <img src="static/images/icon-26.svg" alt="#" loading="lazy" class="imgWH-100 iconImg2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="textCont">
+                            <h3 class="colorBlack capitalize fw700 mb-3">mobile app development</h3>
+                            <p class="colorBlack fw500 m-0">
+                                Our Application development team will create Stunning mobile Apps available for you at
+                                Google Playstore and iStore
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="cardItem">
+                        <div class="text-center">
+                            <div class="boxBorder">
+                                <div class="iconArea">
+                                    <img src="static/images/icon-21.svg" alt="#" loading="lazy" class="imgWH-100 iconImg1">
+                                    <img src="static/images/icon-27.svg" alt="#" loading="lazy" class="imgWH-100 iconImg2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="textCont">
+                            <h3 class="colorBlack capitalize fw700 mb-3">graphic & logo designing</h3>
+                            <p class="colorBlack fw500 m-0">
+                                Our talented team of designers creates high-end custom design graphics for our clients
+                                to elevate brand perception.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% comment %} <div class="col-lg-4 col-md-6">
+                    <div class="cardItem">
+                        <div class="text-center">
+                            <div class="boxBorder">
+                                <div class="iconArea">
+                                    <img src="static/images/icon-22.svg" alt="#" loading="lazy" class="imgWH-100 iconImg1">
+                                    <img src="static/images/icon-28.svg" alt="#" loading="lazy" class="imgWH-100 iconImg2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="textCont">
+                            <h3 class="colorBlack capitalize fw700 mb-3">outdoor advertising</h3>
+                            <p class="colorBlack fw500 m-0">
+                                Do you have a question or require additional assistance? Please contact our support
+                                desk.
+                            </p>
+                        </div>
+                    </div>
+                </div> {% endcomment %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="cardItem">
+                        <div class="text-center">
+                            <div class="boxBorder">
+                                <div class="iconArea">
+                                    <img src="static/images/icon-23.svg" alt="#" loading="lazy" class="imgWH-100 iconImg1">
+                                    <img src="static/images/icon-29.svg" alt="#" loading="lazy" class="imgWH-100 iconImg2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="textCont">
+                            <h3 class="colorBlack capitalize fw700 mb-3">digital advertising</h3>
+                            <p class="colorBlack fw500 m-0">
+                                We provide complete advertising solutions starting from creating graphics, printing,
+                                marketing, and promotional videos up to managing your Social Media
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="cardItem">
+                        <div class="text-center">
+                            <div class="boxBorder">
+                                <div class="iconArea">
+                                    <img src="static/images/icon-24.svg" alt="#" loading="lazy" class="imgWH-100 iconImg1">
+                                    <img src="static/images/icon-30.svg" alt="#" loading="lazy" class="imgWH-100 iconImg2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="textCont">
+                            <h3 class="colorBlack capitalize fw700 mb-3">brand identity</h3>
+                            <p class="colorBlack fw500 m-0">
+                                Our Data servers provide the strongest encryption methods available in the market
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+    
+
+   <script>
+    // Counter Section for counter animation
+   new Counter('#example');
+   </script>
+
+    <!-- Core Services Section End -->
+
+
+    <!-- Partners Section -->
+    <section class="partnerSection ptop100 pbtm100 bgImgProperty"
+        style="background-image: url(static/images/partners-bg.jpg);">
+        <div class="container">
+            <h2 class="capitalize colorWhite fw800 mbtm100 text-center">
+                <span class="colorYellow">our</span>
+                partners
+            </h2>
+            {% comment %} <ul class="resetUl d-flex align-items-center justify-content-center"> {% endcomment %}
+                <div class="owl-carousel owl-theme brandSlider">
+                
+                {% for partner in partner_logo %}
+                <div class="item">
+                    <div class="imgCont">
+                        <a href="#"><img src="{{partner.logo.url}}" alt="#" loading="lazy" class="imgWH-100"></a>
+                    </div>
+                </div>
+                {% endfor %}
+
+                
+                
+                {% comment %} <li>
+                    <div class="imgCont">
+                        <a href="#"><img src="static/images/partners-img-33.png" alt="#" loading="lazy" class="imgWH-100"></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="imgCont">
+                        <a href="#"><img src="static/images/partners-img-32.png" alt="#" loading="lazy" class="imgWH-100"></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="imgCont">
+                        <a href="#"><img src="static/images/partners-img-34.png" alt="#" loading="lazy" class="imgWH-100"></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="imgCont">
+                        <a href="#"><img src="static/images/partners-img-35.png" alt="#" loading="lazy" class="imgWH-100"></a>
+                    </div>
+                </li> {% endcomment %}
+            {% comment %} </ul> {% endcomment %}
+            </div>
+        </div>
+    </section>
+
+    {% comment %} <script>
+    $('.brandSlider').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: false,
+        dots: false,
+        autoplay: true,
+        slideTransition: 'linear',
+        autoplayTimeout: 2500,
+        autoplaySpeed: 2500,
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 2
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 4
+            }
+        }
+    })
+
+    </script> {% endcomment %}
+    <!-- Partners Section End -->
+
+
+    <!-- Portfolio Section -->
+    <section class="portfolioSection bgImgProperty" style="background-image: url(static/images/portfolio-bg.png);">
+        <div class="container">
+            <div class="text-center">
+                <p class="bgYellow capitalize colorBlack f28 fw700 colorBgTitle">innovations unleashed</p>
+                <h2 class="capitalize colorBlack fw800 mbtm30">portfolio showcase</h2>
+                <div class="rightPot2">
+                    <div class="potImg">
+                        <img src="static/images/pot-2.png" alt="#" loading="lazy" class="imgWH-100">
+                    </div>
+                </div>
+                {% comment %} <div class="tabsArea">
+                    <div class="tabHeading">
+                        <ul class="nav nav-pills justify-content-between" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="pills-web-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-web" type="button" role="tab" aria-controls="pills-web"
+                                    aria-selected="true">
+                                    Website
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-app-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-app" type="button" role="tab" aria-controls="pills-app"
+                                    aria-selected="false">
+                                    Mobile App
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-logo-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-logo" type="button" role="tab" aria-controls="pills-logo"
+                                    aria-selected="false">
+                                    Logo Design
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-marketing-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-marketing" type="button" role="tab"
+                                    aria-controls="pills-marketing" aria-selected="false">
+                                    Marketing & Branding
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-printing-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-printing" type="button" role="tab"
+                                    aria-controls="pills-printing" aria-selected="false">
+                                    Printing Design
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-web" role="tabpanel"
+                            aria-labelledby="pills-web-tab" tabindex="0">
+                            <div class="row g-4">
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="cardItem">
+                                        <div class="imgCont">
+                                            <img src="static/images/card-img-18.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                        </div>
+                                        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                            the silva method
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="cardItem">
+                                        <div class="imgCont">
+                                            <img src="static/images/card-img-19.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                        </div>
+                                        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                            the silva method
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="cardItem">
+                                        <div class="imgCont">
+                                            <img src="static/images/card-img-20.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                        </div>
+                                        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                            the silva method
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="cardItem">
+                                        <div class="imgCont">
+                                            <img src="static/images/card-img-21.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                        </div>
+                                        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                            the silva method
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="cardItem">
+                                        <div class="imgCont">
+                                            <img src="static/images/card-img-22.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                        </div>
+                                        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                            the silva method
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="cardItem">
+                                        <div class="imgCont">
+                                            <img src="static/images/card-img-23.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                        </div>
+                                        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                            the silva method
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-app" role="tabpanel" aria-labelledby="pills-app-tab"
+                            tabindex="0">
+                            <div class="row g-4">
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="cardItem">
+                                        <div class="imgCont">
+                                            <img src="static/images/card-img-18.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                        </div>
+                                        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                            the silva method
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="cardItem">
+                                        <div class="imgCont">
+                                            <img src="static/images/card-img-19.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                        </div>
+                                        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                            the silva method
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="cardItem">
+                                        <div class="imgCont">
+                                            <img src="static/images/card-img-20.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                        </div>
+                                        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                            the silva method
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="cardItem">
+                                        <div class="imgCont">
+                                            <img src="static/images/card-img-21.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                        </div>
+                                        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                            the silva method
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="cardItem">
+                                        <div class="imgCont">
+                                            <img src="static/images/card-img-22.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                        </div>
+                                        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                            the silva method
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="cardItem">
+                                        <div class="imgCont">
+                                            <img src="static/images/card-img-23.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                        </div>
+                                        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                            the silva method
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-logo" role="tabpanel" aria-labelledby="pills-logo-tab"
+                            tabindex="0">
+                            <div class="row g-4">
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="cardItem">
+                                        <div class="imgCont">
+                                            <img src="static/images/card-img-18.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                        </div>
+                                        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                            the silva method
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="cardItem">
+                                        <div class="imgCont">
+                                            <img src="static/images/card-img-19.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                        </div>
+                                        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                            the silva method
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="cardItem">
+                                        <div class="imgCont">
+                                            <img src="static/images/card-img-20.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                        </div>
+                                        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                            the silva method
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="cardItem">
+                                        <div class="imgCont">
+                                            <img src="static/images/card-img-21.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                        </div>
+                                        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                            the silva method
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="cardItem">
+                                        <div class="imgCont">
+                                            <img src="static/images/card-img-22.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                        </div>
+                                        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                            the silva method
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="cardItem">
+                                        <div class="imgCont">
+                                            <img src="static/images/card-img-23.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                        </div>
+                                        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                            the silva method
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-marketing" role="tabpanel"
+                            aria-labelledby="pills-marketing-tab" tabindex="0">
+                            <div class="row g-4">
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="cardItem">
+                                        <div class="imgCont">
+                                            <img src="static/images/card-img-18.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                        </div>
+                                        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                            the silva method
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="cardItem">
+                                        <div class="imgCont">
+                                            <img src="static/images/card-img-19.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                        </div>
+                                        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                            the silva method
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="cardItem">
+                                        <div class="imgCont">
+                                            <img src="static/images/card-img-20.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                        </div>
+                                        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                            the silva method
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="cardItem">
+                                        <div class="imgCont">
+                                            <img src="static/images/card-img-21.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                        </div>
+                                        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                            the silva method
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="cardItem">
+                                        <div class="imgCont">
+                                            <img src="static/images/card-img-22.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                        </div>
+                                        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                            the silva method
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="cardItem">
+                                        <div class="imgCont">
+                                            <img src="static/images/card-img-23.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                        </div>
+                                        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                            the silva method
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-printing" role="tabpanel"
+                            aria-labelledby="pills-printing-tab" tabindex="0">
+                            <div class="row g-4">
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="cardItem">
+                                        <div class="imgCont">
+                                            <img src="static/images/card-img-18.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                        </div>
+                                        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                            the silva method
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="cardItem">
+                                        <div class="imgCont">
+                                            <img src="static/images/card-img-19.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                        </div>
+                                        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                            the silva method
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="cardItem">
+                                        <div class="imgCont">
+                                            <img src="static/images/card-img-20.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                        </div>
+                                        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                            the silva method
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="cardItem">
+                                        <div class="imgCont">
+                                            <img src="static/images/card-img-21.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                        </div>
+                                        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                            the silva method
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="cardItem">
+                                        <div class="imgCont">
+                                            <img src="static/images/card-img-22.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                        </div>
+                                        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                            the silva method
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="cardItem">
+                                        <div class="imgCont">
+                                            <img src="static/images/card-img-23.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                        </div>
+                                        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                            the silva method
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> {% endcomment %}
+                <div class="portfolioCards"  >
+                    <div class="row g-4" id="portfolio-section">
+                        {% for item in page_obj %}
+                        <div class="col-lg-4 col-md-6">
+                            <a href="{{item.url |default:'#'}}" class="cardItem">
+                                <div class="imgCont">
+                                    <img src="{{ item.image.url }}" alt="#" loading="lazy" class="imgWH-100">
+                                </div>
+                                <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                    {{ item.title }}  
+                                </div>
+                            </a>
+                        </div>
+                        {% endfor %}
+                        {% comment %} <div class="col-lg-4 col-md-6">
+                            <a href="#" class="cardItem">
+                                <div class="imgCont">
+                                    <img src="static/images/card-img-19.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                </div>
+                                <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                    the silva method
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <a href="#" class="cardItem">
+                                <div class="imgCont">
+                                    <img src="static/images/card-img-20.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                </div>
+                                <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                    the silva method
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <a href="#" class="cardItem">
+                                <div class="imgCont">
+                                    <img src="static/images/card-img-21.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                </div>
+                                <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                    the silva method
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <a href="#" class="cardItem">
+                                <div class="imgCont">
+                                    <img src="static/images/card-img-22.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                </div>
+                                <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                    the silva method
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <a href="#" class="cardItem">
+                                <div class="imgCont">
+                                    <img src="static/images/card-img-23.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                </div>
+                                <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                    the silva method
+                                </div>
+                            </a>
+                        </div> {% endcomment %}
+                    </div>
+                </div>
+              <div class="paginationArea">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                            {% for page_number in page_obj.paginator.page_range %}
+                            <li class="page-item">
+                                <a class="page-link customPagination active" href="?page={{ page_number }}">{{ page_number }}</a>
+                             </li>
+                             {% endfor %}
+                            
+                        </ul>
+                    </nav>
+                </div> 
+
+
+
+                {% comment %} <div class="pagination">
+                    <span class="step-links">
+                        {% if page_obj.has_previous %}
+                            <a href="?page=1">&laquo; first</a>
+                            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                        {% endif %}
+                        
+                        <span class="current-page">{{ page_obj.number }}</span>
+                        
+                        {% if page_obj.has_next %}
+                            <a href="?page={{ page_obj.next_page_number }}">next</a>
+                            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                        {% endif %}
+                    </span>
+                </div> {% endcomment %}
+
+                
+                {% comment %} <div class="pagination " >
+                    <span class="step-links">
+                        {% for page_number in page_obj.paginator.page_range %}
+                            <a href="?page={{ page_number }}">{{ page_number }}</a>
+                        {% endfor %}
+                    </span>
+                </div> {% endcomment %}
+
+
+
+                <script>
+                    jQuery(document).ready(function($) {
+                    $(document).ready(function () {
+                        $('.pagination a').on('click', function (event) {
+                            event.preventDefault();
+                            const pageUrl = $(this).attr('href');
+                            const urlParams = new URLSearchParams(pageUrl);
+                            const page = urlParams.get('page');  // Extract the page number from the URL
+                            $.ajax({
+                                url: `/portfolio1/${page}/`,
+                                success: function (response) {
+                                    $('#portfolio-section').html(response.html);
+                                }
+                            });
+                        });
+                    });});
+                </script>
+
+                {% comment %} <style>
+                    .pagination {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-top: 20px; /* Adjust margin as needed */
+                    }
+                    
+                    .pagination a {
+                        display: inline-block;
+                        padding: 5px 10px;
+                        margin: 0 2px;
+                        text-decoration: none;
+                        color: #333;
+                        border: 1px solid #ccc;
+                        border-radius: 3px;
+                    }
+                    
+                    .pagination a.current-page {
+                        background-color: yellow; /* Set the background color for the active page */
+                        color: black; /* Set the text color for the active page */
+                        font-weight: bold;
+                        border: 1px solid yellow; /* Set the border color for the active page */
+                    }
+                </style> {% endcomment %}
+
+
+                {% comment %} <script>
+                    $(document).ready(function() {
+                        $('.pagination a').on('click', function(event) {
+                            event.preventDefault();
+                            const pageUrl = $(this).attr('href');
+                            console.log('Clicked link URL:', pageUrl); // Debugging
+                            $.ajax({
+                                url: '{% url "home" %}',
+                                success: function(data) {
+                                    console.log('AJAX response:', data); // Debugging
+                                    const portfolioSection = $('#portfolio-section');
+                                    portfolioSection.empty();
+                
+                                    data.portfolio_items.forEach(function(item) {
+                                        const cardItem = ''
+                                               
+                                            portfolioSection.append(cardItem);
+                                    });
+                                }
+                            });
+                        });
+                    });
+                </script> {% endcomment %}
+
+
+
+            </div>
+        </div>
+    </section>
+    <!-- Portfolio Section End -->
+    
+      <!-- Keyword Section -->
+      <section class="keywordSection bgImgProperty ptop100 pbtm100" style="background-image: url(static/images/keywordBg.jpg);">
+        <div class="container text-center">
+            <h2 class="capitalize colorBlack mbtm30">Ready to Accelerate Your
+                <span class="fw800"> Business Digitally?</span>
+            </h2>
+            <h3 class="colorBlack mbtm40">Designing Dreams Digitally: Kickstart Digital Branding with BBTAA</h3>
+            <div class="locationBtn mbtm40">
+                <a target="_blank" href="https://www.google.com/maps/search/?api=1&query={{ site_settings.address }}"
+                    class="fw600 f20 capitalize colorBlack btn btn1 bgYellow d-inline-flex align-items-center gap-2 me-4">
+                    <span class="material-symbols-outlined">
+                        where_to_vote
+                    </span>
+                    find location
+                    <span><i class="fa-solid fa-angle-right alignPadding"></i></span>
+                </a>
+                <a href="#form"
+                    class="fw600 f20 capitalize colorWhite btn btn1 bgBlack d-inline-flex align-items-center gap-2">
+                    <span class="material-symbols-outlined">
+                        request_quote
+                    </span>
+                    get a quote
+                    <span><i class="fa-solid fa-angle-right alignPadding"></i></span>
+                </a>
+            </div>
+            <ul class="d-flex align-items-center justify-content-center gap-3 flex-wrap">
+                <li>Branding Agency UK</li>
+                <li>graphics design agency</li>
+                <li>google ads agency</li>
+                <li>Top SEO Company</li>
+                <li>best creative agency UK</li>
+                <li>digital marketing agency</li>
+                <li>best advertising agencies</li>
+                <li>web design & development agency</li>
+            </ul>
+        </div>
+    </section>
+    <!-- Keyword Section End -->
+    
+
+    
+{% endblock %}
+

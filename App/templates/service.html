@@ -1,0 +1,269 @@
+{% extends "base.html" %}
+
+{% block start %}
+    <!-- Banner Section -->
+    <section class="bannerSection bgImgProperty aboutBanner serviceBanner">
+        <div class="bannerBg">
+            <img src="{{ banner.banner_image_mobile.url }}" alt="{{banner.image_alt_text|safe}}" loading="lazy" class="imgWH-100">
+        </div>
+        <div class="bannerCont">
+            <div class="container">
+                <div class="innerDiv">
+                    <p class="f28 fw200 capitalize colorWhite">{{banner.banner_super_text|safe}}</p>
+                    <h1 class="capitalize colorWhite fw800 mbtm40">{{banner.banner_main_text_part_one|safe}}
+                        <span class="colorYellow">{{banner.banner_main_text_part_two|safe}}</span>
+                    </h1>
+                    <div class="twoBtns">
+                        <a href="#black-tiger-service-section" class="fw600 f20 capitalize colorBlack btn btn1 bgYellow">{{ banner.button_text|safe }}
+                            <span><i class="fa-solid fa-angle-right alignPadding"></i></span>
+                        </a>
+                        <div class="smVideoBtn hideDiv2">
+                            <button type="button" class="playPulse" data-bs-toggle="modal" data-bs-target="#videoModal">
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="videoBtn hideDiv">
+            <div class="container">
+                <button type="button" class="playPulse" data-bs-toggle="modal" data-bs-target="#videoModal">
+                    <i class="fa-solid fa-play"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        @media (min-width: 768px) {
+            .serviceBanner {
+                background-image: url({{banner.banner_image_desktop.url}});
+                background-position-x: 34%;
+                padding: 250px 0;
+            }
+        }
+    </style>
+    <!-- Banner Section End -->
+
+
+    <!-- Digital Branding Section -->
+    <section class="digitalBrandSection bgImgProperty ptop100">
+        <div class="container" id ='black-tiger-service-section'>
+            <div class="textCont">
+                <h2 class="colorBlack fw800 capitalize mbtm30">digital branding</h2>
+                <p class="p1 colorBlack mbtm40 w48">
+                    Brand Identity Solutions is actually the perception of clients about a particular
+                    business. It is a complete package of your business for its users. It includes
+                    product quality, service reputation, etc. As a business owner, leveraging your
+                    brand identity can help you in a way to strengthen your business. This can be
+                    done by leveraging messages and actions. Certainly, this allows your target
+                    consumer to interpret and relate your brand to those specific traits.
+                </p>
+                <h3 class="f20 fw600 colorBlack">Brand Identity Solutions - Why so important?</h3>
+                <p class="p2 colorBlack w48">
+                    Developing and delivering a strong brand identity can help you put up a
+                    strong foundation for your business. With Black Tiger Advertising (BBTAA), you
+                    can be completely rest assured of. BBTAA knows that your brand identity is
+                    much more than just logos and websites.
+                </p>
+                <h3 class="f28 fw800 colorBlack mb-4">Black Tiger Advertising’s Core Services</h3>
+                <div class="coreServiceBtn">
+                    <button type="button" class="serviceBtn">
+                        <div class="icon">
+                            <img src="static/images/btn-icons-03.svg" alt="#" loading="lazy" class="imgWH-100">
+                        </div>
+                        <span class="capitalize">web design</span>
+                    </button>
+                    <button type="button" class="serviceBtn">
+                        <div class="icon">
+                            <img src="static/images/btn-icons-04.svg" alt="#" loading="lazy" class="imgWH-100">
+                        </div>
+                        <span class="capitalize">Web Development</span>
+                    </button>
+                    <button type="button" class="serviceBtn">
+                        <div class="icon">
+                            <img src="static/images/btn-icons-05.svg" alt="#" loading="lazy" class="imgWH-100">
+                        </div>
+                        <span class="capitalize">mobile App Development</span>
+                    </button>
+                    <button type="button" class="serviceBtn">
+                        <div class="icon">
+                            <img src="static/images/btn-icons-06.svg" alt="#" loading="lazy" class="imgWH-100">
+                        </div>
+                        <span class="capitalize">Video Editing</span>
+                    </button>
+                    <button type="button" class="serviceBtn">
+                        <div class="icon">
+                            <img src="static/images/btn-icons-07.svg" alt="#" loading="lazy" class="imgWH-100">
+                        </div>
+                        <span class="capitalize">Graphic Design</span>
+                    </button>
+                    <button type="button" class="serviceBtn">
+                        <div class="icon">
+                            <img src="static/images/btn-icons-07.svg" alt="#" loading="lazy" class="imgWH-100">
+                        </div>
+                        <span class="capitalize">Digital Marketing</span>
+                    </button>
+                </div>
+                <div class="btmBlankHeight"></div>
+            </div>
+        </div>
+        <div class="bannerBg">
+            <img src="static/images/sm-digital-brand-bg.jpg" alt="#" loading="lazy" class="imgWH-100">
+        </div>
+    </section>
+    <!-- Digital Branding Section End -->
+
+
+    <!-- Strategic Digital Section -->
+    <section class="strDigitalSection bgImgProperty ptop100">
+        <div class="container">
+            <div class="textCont w75 m-auto">
+                <h2
+                    class="capitalize colorWhite fw800 mb-5 d-flex align-items-center justify-content-center gap-3 flex-wrap">
+                    Strategic Digital
+                    <span class="f28 colorBgTitle colorBlack bgYellow">Advertising</span>
+                </h2>
+                <p class="p1 fw300 colorWhite mbtm40">
+                    Black Tiger Advertising can provide you with the best-in-class professional Digital marketing
+                    services in the UK and all
+                    over the world. With over 10 years of expertise in the advertising industry & being a leading
+                    professional SEO services
+                    provider, we can help you gain more profits and a steady increase in your business revenue. With the
+                    rapid increase in
+                    the growth of digital platform, business owners are finding it as a necessity to make their digital
+                    presence more stronger
+                    than ever. Your highly active online presence can actually help you to get more potential customers
+                    by meeting their requirements. If you rank higher than your competitors rank on the search engine
+                    and still lack a concrete online marketing strategy for your business, then you are genuinely
+                    missing out the excellent opportunities for a wild business growth.
+                </p>
+                <h3 class="f28 fw800 colorWhite mb-4 text-center">Black Tiger Advertising’s Core Services</h3>
+                <div class="coreServiceBtn justify-content-center">
+                    <button type="button" class="serviceBtn">
+                        <span class="capitalize">Google Ads</span>
+                    </button>
+                    <button type="button" class="serviceBtn">
+                        <span class="capitalize">Social Media Ads</span>
+                    </button>
+                    <button type="button" class="serviceBtn">
+                        <span class="capitalize">E-mail Marketing</span>
+                    </button>
+                    <button type="button" class="serviceBtn">
+                        <span class="capitalize">WhatsApp Marketing</span>
+                    </button>
+                    <button type="button" class="serviceBtn">
+                        <span class="capitalize">CPC/PPC</span>
+                    </button>
+                </div>
+                <div class="strDigiBlankHeight"></div>
+            </div>
+        </div>
+        <div class="smallBg">
+            <img src="static/images/sm-str-digital-bg.jpg" alt="#" loading="lazy" class="imgWH-100">
+        </div>
+    </section>
+    <!-- Strategic Digital Section End -->
+
+
+    <!-- Choose Us Section -->
+    <section class="chooseUsSection ptop100 pbtm100">
+        <div class="container">
+            <h2 class="colorBlack fw800 mbtm30 d-flex align-items-center justify-content-center gap-3 flex-wrap">
+                Why you
+                <span class="f28 colorBgTitle colorBlack bgYellow">Choose Us</span>
+            </h2>
+            <h3 class="fw700 colorBlack capitalize mb-5 text-center">
+                Unlocking Possibilities Through Innovative Solutions
+            </h3>
+            <div class="chooseUsCards">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="cardItem">
+                            <span><i class="fa-solid fa-circle-check"></i></span>
+                            <div class="textCont">
+                                <h3 class="f20 fw700 colorBlack capitalize">Proven Expertise</h3>
+                                <p class="colorBlack">
+                                    Our seasoned team brings a wealth of experience
+                                    in digital marketing, branding, web development,
+                                    and app development, ensuring a comprehensive
+                                    and cohesive strategy for your brand's success.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="cardItem">
+                            <span><i class="fa-solid fa-circle-check"></i></span>
+                            <div class="textCont">
+                                <h3 class="f20 fw700 colorBlack capitalize">Tailored Solutions</h3>
+                                <p class="colorBlack">
+                                    nderstand that every client is unique. Our approach involves crafting customized
+                                    strategies that
+                                    align with your brand's goals, ensuring you receive
+                                    solutions that are perfectly tailored to your needs.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="cardItem">
+                            <span><i class="fa-solid fa-circle-check"></i></span>
+                            <div class="textCont">
+                                <h3 class="f20 fw700 colorBlack capitalize">Strategic Branding</h3>
+                                <p class="colorBlack">
+                                    Our keen eye for branding details will give your
+                                    business a distinct identity in the crowded digital
+                                    landscape, helping you establish a strong and
+                                    memorable presence.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="cardItem">
+                            <span><i class="fa-solid fa-circle-check"></i></span>
+                            <div class="textCont">
+                                <h3 class="f20 fw700 colorBlack capitalize">Creative Excellence</h3>
+                                <p class="colorBlack">
+                                    om captivating web designs to innovative app interfaces, our creative minds thrive
+                                    on producing visually appealing, user-centric solutions that
+                                    engage and convert.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="cardItem">
+                            <span><i class="fa-solid fa-circle-check"></i></span>
+                            <div class="textCont">
+                                <h3 class="f20 fw700 colorBlack capitalize">Data-Driven Approach</h3>
+                                <p class="colorBlack">
+                                    just about aesthetics; we're about delivering tangible results. Our data-driven
+                                    approach ensures that every design choice and marketing tactic
+                                    is aimed at driving real, measurable outcomes.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="cardItem">
+                            <span><i class="fa-solid fa-circle-check"></i></span>
+                            <div class="textCont">
+                                <h3 class="f20 fw700 colorBlack capitalize">Cutting-Edge Technology</h3>
+                                <p class="colorBlack">
+                                    Our commitment to staying up-to-date with the
+                                    latest technological trends empowers us to leverage cutting-edge tools and
+                                    platforms, guaranteeing modern and efficient solutions.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Choose Us Section End -->
+
+{% endblock %}

@@ -1,0 +1,326 @@
+{% extends "base.html" %}
+
+
+   {% block start %}
+
+
+    <!-- Banner Section -->
+    <section class="bannerSection bgImgProperty aboutBanner">
+        <div class="bannerBg">
+            <img src="{{ banner.banner_image_mobile.url }}" alt="{{banner.image_alt_text|safe}}" loading="lazy" class="imgWH-100">
+        </div>
+        <div class="bannerCont">
+            <div class="container">
+                <div class="innerDiv">
+                    <p class="f28 fw200 capitalize colorWhite">{{banner.banner_super_text|safe}}</p>
+                    <h1 class="h2 capitalize colorWhite fw800 mb-0">{{banner.banner_main_text_part_one|safe}}</h1>
+                    <h2 class="h1 fw800 colorWhite capitalize mbtm30">
+                        <span class="colorYellow">{{banner.banner_main_text_part_two|safe}}</span>
+                    </h2>
+                    <p class="h3 capitalize colorWhite fw300 lineHeight32 mbtm40">
+                        {{banner.banner_sub_text|safe}}
+                    </p>
+                    <div class="twoBtns">
+                        <a href="#core-service-section" class="fw600 f20 capitalize colorBlack btn btn1 bgYellow">{{ banner.button_text|safe }}
+                            <span><i class="fa-solid fa-angle-right alignPadding"></i></span>
+                        </a>
+                        <div class="smVideoBtn hideDiv2">
+                            <button type="button" class="playPulse" data-bs-toggle="modal" data-bs-target="#videoModal">
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="videoBtn hideDiv">
+            <div class="container">
+                <button type="button" class="playPulse" data-bs-toggle="modal" data-bs-target="#videoModal">
+                    <i class="fa-solid fa-play"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+    @media (min-width: 768px) {
+        .aboutBanner {
+            background-image: url({{banner.banner_image_desktop.url}});
+            padding: 210px 0;
+        }
+    }
+    </style>
+    <!-- Banner Section End -->
+  
+    
+
+    <!-- History Section -->
+    <section class="historySection bgImgProperty ptop100 pbtm100">
+        <div class="container text-center">
+            <h2 class="colorBlack fw800 mbtm30">History of BBTAA</h2>
+            <h3 class="fw700 colorBlack capitalize mbtm40">
+                digital advertisement solutions - dudley, UK
+            </h3>
+            <p class="p1 colorBlack text-start mbtm40">
+                Black Tiger Advertising began as a family business offering quality Digital Advertisement Solutions in
+                Dudley, UK. It has became a real business with time having many more members. Yes, we are more than a
+                business or a company, we are a Big, United and Professional family. We like to Smile, to Laugh, and
+                Joke as well. Good mood is at home in our office and we also know when to separate this from our work.
+            </p>
+            <a href="#core-service-section" class="fw600 f20 capitalize colorBlack btn btn1 bgYellow">know more
+                <span><i class="fa-solid fa-angle-right alignPadding"></i></span>
+            </a>
+            <div class="blankHeight"></div>
+            <p class="bgYellow colorBlack f28 fw700 capitalize colorBgTitle">about</p>
+            <h2 class="colorWhite fw800 capitalize mbtm30">black tiger advertising</h2>
+            <p class="p1 colorWhite text-start">
+                BBTAA is a one-stop-shop for complete Digital Advertisement Solutions. We tailor the business carefully
+                & specifically for your needs. We like to speak through our work rather than mere words. Advertising
+                should always be a professional one. We customize them based on the requirements. Also, we equip the
+                platform with the latest technology without compromising its beauty. We provide strategically designed
+                solutions to make you the best in your domain with no peers. Here, we design & develop products,
+                implement marketing strategies strictly needed for you to earn long-term sales.
+            </p>
+            <p class="p1 colorWhite text-start mbtm40">
+                Utmost Professionalism is the key trait of our company. And you will immediately notice as soon as you
+                start working with us. We always maintain complete transparency & flexibility. This is required to
+                maintain a professional relationship for a long time with our clients. We believe every project comes
+                with an equal opportunity to upgrade ourselves.
+            </p>
+            <h3 class="fw700 colorWhite capitalize mbtm40">
+                100% job satisfaction
+            </h3>
+            <p class="p1 colorWhite text-start">
+                Our job is considered done only when you are satisfied. BBTAA Team Ltd is an advertising agency based in
+                the West Midlands in Birmingham. We are generally known as Black Tiger Advertising Agency. With over 10
+                years of expertise in Digital Advertising Solutions, we can guarantee the best digital solution for all
+                your needs. We believe that Client Satisfaction always equals to Project Completion.
+            </p>
+        </div>
+    </section>
+    <!-- History Section End -->
+
+
+    <!-- Mission Section -->
+    <section class="missionSection bgImgProperty">
+        <div class="container">
+            <div class="blankHeight500"></div>
+            <div class="rightCont">
+                <h2 class="capitalize colorBlack fw800 mbtm30">
+                    our
+                    <span class="colorYellow">mission</span>
+                </h2>
+                <p class="p1 colorBlack">
+                    We all are probably aware of the fact that tools are as good as its user. Hence, hiring the right
+                    company for your business needs can be the deciding factor for the sales improvement of your
+                    company. With BBTAA, you can be completely rest assured of getting the desired results in a timely &
+                    effective manner. Our mission has always been to provide quality services at competitive prices,
+                    while maintaining utmost professionalism & complete transparency to sustain a long-lasting business
+                    relation with our clients in the UK & all over the world.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Mission Section End -->
+
+
+    <!-- Vision Section -->
+    <section class="visionSection bgImgProperty">
+        <div class="container">
+            <div class="blankHeight500"></div>
+            <div class="leftCont">
+                <h2 class="capitalize colorWhite fw800 mbtm30">
+                    our
+                    <span class="colorYellow">vision</span>
+                </h2>
+                <p class="p1 colorWhite fw300">
+                    In this era of digitalisation, it very important to have a web presence of your own. The stronger
+                    your web presence is, the more visibility your business will get. In this respect, Black Tiger
+                    Advertising Agency (BBTAA) can help you out.
+                </p>
+                <p class="p1 colorWhite fw300">
+                    Being the best web development company along with the best advertising agency in the UK, we have
+                    more than 10 years of rich experience in the industry. Also, we have a one-of-a-kind team comprising
+                    of expert professionals, who work day in day out to materialize your business concept in an
+                    unparalleled way.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Vision Section End -->
+
+
+    <!-- Core Services Section -->
+    <section class="coreServiceSection bgImgProperty aboutService">
+        <div class="container" id = "core-service-section">
+            <div class="headingArea text-center">
+                <p class="bgYellow colorBlack f28 fw700 colorBgTitle">Black Tiger's</p>
+                <h2 class="capitalize colorBlack fw800 mb-4">core Services</h2>
+                <h3 class="fw700 colorBlack capitalize mbtm30">
+                    digital advertisement solutions - BBTAA
+                </h3>
+                <p class="p1 colorBlack fw500 text-start">
+                    From Local Search Engine optimization to PPC campaigns, our digital marketing assistance ranges
+                    across quite a few verticals. As all our efforts are developed with client satisfaction in mind, you
+                    will discover all kinds of digital marketing assistance with us. Our service offerings include:
+                </p>
+            </div>
+            <div class="row gx-3 gy-4 justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="cardItem">
+                        <div class="text-center">
+                            <div class="boxBorder">
+                                <div class="iconArea">
+                                    <img src="static/images/icon-11.svg" alt="#" loading="lazy" class="imgWH-100 iconImg1">
+                                    <img src="static/images/icon-03.svg" alt="#" loading="lazy" class="imgWH-100 iconImg2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="textCont">
+                            <h3 class="colorBlack capitalize fw700 mb-3">Website Designing</h3>
+                            <p class="colorBlack fw500 m-0">
+                                While working with Black Tiger Advertising (BBTAA), you will be getting the best
+                                services from one of the Best Website Designing Company in UK.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="cardItem">
+                        <div class="text-center">
+                            <div class="boxBorder">
+                                <div class="iconArea">
+                                    <img src="static/images/icon-19.svg" alt="#" loading="lazy" class="imgWH-100 iconImg1">
+                                    <img src="static/images/icon-25.svg" alt="#" loading="lazy" class="imgWH-100 iconImg2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="textCont">
+                            <h3 class="colorBlack capitalize fw700 mb-3">Website Development</h3>
+                            <p class="colorBlack fw500 m-0">
+                                Online marketing has increased the demand for a strong web presence so that you can add
+                                more clients to the existing list as well as generate more business
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="cardItem">
+                        <div class="text-center">
+                            <div class="boxBorder">
+                                <div class="iconArea">
+                                    <img src="static/images/icon-20.svg" alt="#" loading="lazy" class="imgWH-100 iconImg1">
+                                    <img src="static/images/icon-26.svg" alt="#" loading="lazy" class="imgWH-100 iconImg2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="textCont">
+                            <h3 class="colorBlack capitalize fw700 mb-3">Mobile App Development</h3>
+                            <p class="colorBlack fw500 m-0">
+                                Our Application development team will create Stunning mobile Apps available for you at
+                                Google Playstore and iStore
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="cardItem">
+                        <div class="text-center">
+                            <div class="boxBorder">
+                                <div class="iconArea">
+                                    <img src="static/images/icon-21.svg" alt="#" loading="lazy" class="imgWH-100 iconImg1">
+                                    <img src="static/images/icon-27.svg" alt="#" loading="lazy" class="imgWH-100 iconImg2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="textCont">
+                            <h3 class="colorBlack capitalize fw700 mb-3">Graphic & Logo Designing</h3>
+                            <p class="colorBlack fw500 m-0">
+                                Our talented team of designers creates high-end custom design graphics for our clients
+                                to elevate brand perception.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="cardItem">
+                        <div class="text-center">
+                            <div class="boxBorder">
+                                <div class="iconArea">
+                                    <img src="static/images/icon-23.svg" alt="#" loading="lazy" class="imgWH-100 iconImg1">
+                                    <img src="static/images/icon-29.svg" alt="#" loading="lazy" class="imgWH-100 iconImg2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="textCont">
+                            <h3 class="colorBlack capitalize fw700 mb-3">digital advertising</h3>
+                            <p class="colorBlack fw500 m-0">
+                                We provide complete advertising solutions starting from creating graphics, printing,
+                                marketing, and promotional videos up to managing your Social Media
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="cardItem">
+                        <div class="text-center">
+                            <div class="boxBorder">
+                                <div class="iconArea">
+                                    <img src="static/images/icon-24.svg" alt="#" loading="lazy" class="imgWH-100 iconImg1">
+                                    <img src="static/images/icon-30.svg" alt="#" loading="lazy" class="imgWH-100 iconImg2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="textCont">
+                            <h3 class="colorBlack capitalize fw700 mb-3">brand identity</h3>
+                            <p class="colorBlack fw500 m-0">
+                                Our Data servers provide the strongest encryption methods available in the market
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% comment %} <div class="col-lg-4 col-md-6">
+                    <div class="cardItem">
+                        <div class="text-center">
+                            <div class="boxBorder">
+                                <div class="iconArea">
+                                    <img src="static/images/icon-22.svg" alt="#" loading="lazy" class="imgWH-100 iconImg1">
+                                    <img src="static/images/icon-28.svg" alt="#" loading="lazy" class="imgWH-100 iconImg2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="textCont">
+                            <h3 class="colorBlack capitalize fw700 mb-3">Outdoor Advertising</h3>
+                            <p class="colorBlack fw500 m-0">
+                                Do you have a question or require additional assistance? Please contact our support
+                                desk.
+                            </p>
+                        </div>
+                    </div>
+                </div> {% endcomment %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="cardItem">
+                        <div class="text-center">
+                            <div class="boxBorder">
+                                <div class="iconArea">
+                                    <img src="static/images/icon-12.svg" alt="#" loading="lazy" class="imgWH-100 iconImg1">
+                                    <img src="static/images/icon-08.svg" alt="#" loading="lazy" class="imgWH-100 iconImg2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="textCont">
+                            <h3 class="colorBlack capitalize fw700 mb-3">Video Editing</h3>
+                            <p class="colorBlack fw500 m-0">
+                                There are several ways to promote a company’s product & services. Video Marketing
+                                Service UK is one such way that will help you to do promotions for your company in an
+                                effective way.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Core Services Section End -->
+
+{% endblock %}

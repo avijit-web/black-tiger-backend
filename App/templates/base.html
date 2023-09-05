@@ -1,0 +1,478 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO text dynamic load from DB -->
+    {{meta_data.meta_description | safe }}
+
+    <!-- Load the favicon using the site_settings instance -->
+    <link rel="icon" type="image/x-icon" href="{{ site_settings.fav_icon.url }}">
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="static/css/plugin/cdnjs.cloudflare.com_ajax_libs_OwlCarousel2_2.3.4_assets_owl.carousel.min.css">
+    <link rel="stylesheet" href="static/css/plugin/cdnjs.cloudflare.com_ajax_libs_OwlCarousel2_2.3.4_assets_owl.theme.default.min.css">
+
+
+    
+    <link rel="stylesheet" href="static/css/plugin/cdn.jsdelivr.net_npm_bootstrap@5.3.1_dist_css_bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    
+    
+    
+   
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="static/js/plugin/counter.min.js"></script>
+
+    
+    
+</head>
+
+<body>
+    <!-- Navbar Section -->
+    <header>
+        <section class="navbarSection">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg">
+                    <a class="navbar-brand" href="{% url 'home' %}">
+                        <img src="{{ site_settings.site_logo.url }}" alt="#" loading="lazy">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a id="nav-home" class="nav-link" href="{% url 'home' %}">Front Door</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a id= "nav-about" class="nav-link" href="{% url 'about' %}" >Behind The Scenes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a id = "nav-services" class="nav-link" href="{% url 'services' %}">Solutions</a>
+                            </li>
+                            <li class="nav-item">
+                                <a id = "nav-portfolio" class="nav-link" href="{% url 'portfolio' %}">Showcase</a>
+                            </li>
+                            {% comment %} <li class="nav-item">
+                                <a id = "nav-blog" class="nav-link" href="{% url 'blog' %}">Blog</a>
+                            </li> {% endcomment %}
+                            <li class="nav-item">
+                                <a id = "nav-contact" class="nav-link" href="{% url 'contact' %}">Reach Out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </section>
+    </header>
+    <!-- Navbar Section End -->
+
+
+
+{% block start  %}
+
+
+
+{% endblock %}
+
+    {% block form_area %}
+    <!-- Form Area -->
+    <section class="formSection bgImgProperty" style="background-image: url(static/images/form-bg.jpg);">
+        <div class="container">
+            <div class="formArea">
+                <p class="p1 capitalize colorYellow f28 fw700 colorBgTitle">discover</p>
+                <h2 class="colorWhite fw800">How we can Help</h2>
+                <h3 class="f20 fw700 colorWhite capitalize mbtm40">
+                    your business grow
+                </h3>
+                <form action="{% url 'form' %}" method ="post" id="form">
+                    {% csrf_token %}
+                    <div class="row gy-4 mbtm40">
+                        <div class="col-md-6">
+                            <label for="inputName" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" name = "name" id="inputName" placeholder="Type here..." required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" name = "email" id="inputEmail" placeholder="Type here..." required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputNum" class="form-label">Mobile Number</label>
+                            <input type="text" class="form-control" name= "mobile" id="inputNum" placeholder="Type here..." required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputUrl" class="form-label">Website URL</label>
+                            <input type="text" class="form-control" name="url" id="inputUrl" placeholder="Type here..." required>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="inputBudget" class="form-label">What is your projected Monthly budget?</label>
+                            <input type="text" class="form-control" name = "budget" id="inputBudget" placeholder="Type here..." required>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="inputMsg" class="form-label">Message</label>
+                            <textarea class="form-control" name= "message" id="inputMsg" placeholder="Type here..."
+                                style="height: 120px;" required></textarea>
+                        </div>
+                    </div>
+                    <div class="formBtn">
+                        <button type="submit" class="fw600 f20 capitalize colorBlack btn btn1 bgYellow">
+                            send us
+                            <span><i class="fa-solid fa-angle-right alignPadding"></i></span>
+                        </button>
+                    </div>
+                    {% comment %} <div class="printMsg mt-4">
+                        <p class="mb-0 d-flex align-items-baseline gap-2 success-message" id= "success_message" >
+                            <span><i class="fa-solid fa-check bgGreen"></i></span>
+                            <span class="colorWhite">Successful! Your form has been submitted. Thank you for reaching
+                                out to us.</span>
+                        </p>
+                        <p class="mb-0 d-flex align-items-baseline gap-2 error-message" id = " error_message">
+                            <span><i class="fa-solid fa-xmark bgRed"></i></span>
+                            <span class="colorWhite">Oops! It seems there was an issue with submitting the form. Please
+                                try again or contact us directly.</span>
+                        </p>
+                    </div> {% endcomment %}
+                    
+                </form>
+                <div id="message-container"></div>
+            </div>
+        </div>
+    </section>
+    <!-- Form Area End -->
+
+    {% endblock %}
+
+    <!-- Footer Area -->
+    <footer>
+        <section class="footerSection bgImgProperty" style="background-image: url(static/images/footer-bg.jpg);">
+            <div class="topCont pbtm100">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5 col-sm-12">
+                            <div class="leftSide">
+                                <div class="logoArea mbtm40">
+                                    <img src="{{ site_settings.site_logo.url }}" alt="#" loading="lazy">
+                                </div>
+                                <p class="colorWhite fw300 mbtm30">
+                                    We are the one-stop destination for a complete package of digital solutions,
+                                    tailored carefully & specifically for your needs. Our work speaks for us, more than
+                                    words ever could.
+                                </p>
+                                <div class="ratingsCont d-flex align-items-start gap-3 mbtm40">
+                                    <ul class="resetUl d-flex align-items-center gap-1">
+                                        <li><i class="fa-solid fa-star colorYellow"></i></li>
+                                        <li><i class="fa-solid fa-star colorYellow"></i></li>
+                                        <li><i class="fa-solid fa-star colorYellow"></i></li>
+                                        <li><i class="fa-solid fa-star colorYellow"></i></li>
+                                        <li><i class="fa-solid fa-star colorYellow"></i></li>
+                                    </ul>
+                                    <div class="colorWhite fw300 mb-0">
+                                        <p class="mb-2">
+                                            Black Tiger Advertising Agency is Rated 4.8/5 Based on 1294 Verified Reviews
+                                        </p>
+                                        <ul class="resetUl d-flex align-items-center gap-2">
+                                            <li><i class="fa-brands fa-google icons"></i></li>
+                                            <li><i class="fa-brands fa-yelp icons"></i></li>
+                                            <li><i class="fa-brands fa-facebook-f icons"></i></li>
+                                            <li>
+                                                <div class="iconImg icons">
+                                                    <img src="static/images/bing_logo.png" alt="#" loading="lazy">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="iconImg icons">
+                                                    <img src="static/images/yell-logo.png" alt="#" loading="lazy">
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <ul class="resetUl d-flex align-items-center gap-5 outerUl">
+                                    <li>
+                                        <ul class="resetUl d-flex align-items-center gap-3">
+                                            <li>
+                                                <div class="footerIcon">
+                                                    <img src="static/images/footer-icon-27.svg" alt="#" loading="lazy"
+                                                        class="imgWH-100">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <a href="tel:{{ site_settings.phone_number }}" class="fw700 f20 colorWhite">{{ site_settings.phone_number }}</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul class="resetUl d-flex align-items-center gap-3">
+                                            <li>
+                                                <div class="footerIcon">
+                                                    <img src="static/images/footer-icon-28.svg" alt="#" loading="lazy"
+                                                        class="imgWH-100">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <a target="_blank" href="https://wa.me/{{ site_settings.whatsapp_number |cut:" " }}" class="fw700 f20 colorWhite">{{ site_settings.whatsapp_number }}</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-1 col-sm-12">
+                            <div class="middleBorder"></div>
+                        </div>
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="rightSide">
+                                <div class="row gy-5">
+                                    <div class="col-lg-6 col-sm-6">
+                                        <div class="rightCont">
+                                            <h3 class="capitalize colorWhite fw600 f20 mbtm30">quick links</h3>
+                                            <ul class="resetUl">
+                                                <li><a href="{% url 'home' %}" class="links">home</a></li>
+                                                <li><a href="{% url 'about' %}" class="links">about us</a></li>
+                                                <li><a href="{% url 'portfolio' %}" class="links">portfolio</a></li>
+                                                <li><a href="{% url 'contact' %}" class="links">contact us</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-sm-6">
+                                        <div class="rightCont">
+                                            <h3 class="capitalize colorWhite fw600 f20 mbtm30">our services</h3>
+                                            <ul class="resetUl">
+                                                <li>
+                                                    <a href="#" class="links">
+                                                        Logo Designing & Graphic Designing
+                                                    </a>
+                                                </li>
+                                                <li><a href="#" class="links">Website Designing Services</a></li>
+                                                <li><a href="#" class="links">Outdoor Advertising</a></li>
+                                                <li><a href="#" class="links">Brand Identity Solutions</a></li>
+                                                <li><a href="#" class="links">Digital Marketing</a></li>
+                                                <li><a href="#" class="links">Mobile App Development</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-sm-6">
+                                        <div class="rightCont">
+                                            <h3 class="capitalize colorWhite fw600 f20 mbtm30">contact info</h3>
+                                            <ul class="resetUl">
+                                                <li class="d-flex align-items-baseline gap-2">
+                                                    <div class="infoIcon">
+                                                        <img src="static/images/footer-icon-33.svg" alt="#" loading="lazy"
+                                                            class="imgWH-100">
+                                                    </div>
+                                                    <a target="_blank" href="https://www.google.com/maps/search/?api=1&query={{ site_settings.address }}" class="links">{{ site_settings.address }}</a>
+                                                </li>
+                                                <li class="d-flex align-items-baseline gap-2">
+                                                    <div class="infoIcon">
+                                                        <img src="static/images/footer-icon-34.svg" alt="#" loading="lazy"
+                                                            class="imgWH-100">
+                                                    </div>
+                                                    <a href="tel:{{ site_settings.phone_number }}" class="links">{{ site_settings.phone_number }}</a>
+                                                </li>
+                                                <li class="d-flex align-items-baseline gap-2">
+                                                    <div class="infoIcon">
+                                                        <img src="static/images/footer-icon-35.svg" alt="#" loading="lazy"
+                                                            class="imgWH-100">
+                                                    </div>
+                                                    <a href="mailto:{{ site_settings.email }}"
+                                                        class="colorGray f14">{{ site_settings.email }}</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-sm-6">
+                                        <div class="rightCont">
+                                            <h3 class="capitalize colorWhite fw600 f20 mbtm30">stay connected</h3>
+                                            <ul class="resetUl d-flex align-items-center gap-2">
+                                                <li class="mb-0">
+                                                    <a target="_blank" href="{{ site_settings.social_media_links.facebook }}" class="footerIcon">
+                                                        <img src="static/images/footer-icon-29.svg" alt="#" loading="lazy"
+                                                            class="imgWH-100">
+                                                    </a>
+                                                </li>
+                                                <li class="mb-0">
+                                                    <a target="_blank" href="{{ site_settings.social_media_links.X }}" class="footerIcon">
+                                                        <img src="static/images/footer-icon-30.svg" alt="#" loading="lazy"
+                                                            class="imgWH-100">
+                                                    </a>
+                                                </li>
+                                                <li class="mb-0">
+                                                    <a target="_blank" href="{{ site_settings.social_media_links.instagram }}" class="footerIcon">
+                                                        <img src="static/images/footer-icon-31.svg" alt="#" loading="lazy"
+                                                            class="imgWH-100">
+                                                    </a>
+                                                </li>
+                                                <li  class="mb-0">
+                                                    <a target="_blank" href="{{ site_settings.social_media_links.linkedin }}" class="footerIcon">
+                                                        <img src="static/images/footer-icon-32.svg" alt="#" loading="lazy"
+                                                            class="imgWH-100">
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btmCont">
+                <div class="container">
+                    <div class="contArea py-3 colorWhite fw300 f14 text-center">
+                        Copyright 2018-2023 Black Tiger Advertising is a trading name for BBTAA team ltd.
+                        Company Number: 11944304, Vat Reg. No: 385 788 623. All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+    <!-- Footer Area End -->
+
+
+    <!-- Video Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <video autoplay muted loop class="bannerVideo">
+
+                        <source src="{{banner_video.video.url}}" type="video/mp4">
+                        {% comment %} <source src="static/images/Tiger-Slider.mp4" type="video/mp4"> {% endcomment %}
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Video Modal End -->
+
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    
+    <script src="static/js/plugin/cdnjs.cloudflare.com_ajax_libs_OwlCarousel2_2.3.4_owl.carousel.min.js"></script>
+    <script src="static/js/plugin/cdn.jsdelivr.net_npm_bootstrap@5.3.1_dist_js_bootstrap.bundle.min.js"></script>
+    
+    <script src="static/js/custom.js"></script>
+    
+
+
+    <script>
+        const currentPage = window.location.pathname;
+    
+        // Function to set active link
+        function setActiveLink(linkId) {
+            const link = document.getElementById(linkId);
+            if (link && link.classList) {
+                link.classList.add('active');
+            }
+        }
+    
+        // Set active link based on the current page
+        if (currentPage === '/') {
+            setActiveLink('nav-home');
+        } else if (currentPage === '/about') {
+            setActiveLink('nav-about');
+        } else if (currentPage === '/services') {
+            setActiveLink('nav-services');
+        } else if (currentPage === '/portfolio') {
+            setActiveLink('nav-portfolio');
+        } else if (currentPage === '/blog') {
+            setActiveLink('nav-blog');
+        } else if (currentPage === '/contact') {
+            setActiveLink('nav-contact');
+        }
+        
+        // Add more conditions for other pages
+    
+    </script>
+    <script>
+        jQuery(document).ready(function($) {
+            // Now you can use $ inside this function without conflicts
+        });
+        </script>
+    <script>
+        jQuery(document).ready(function($) {
+        $(document).ready(function() {
+            $('#form').submit(function(event) {
+                event.preventDefault(); // Prevent the regular form submission
+                var $form = $(this); // Store a reference to the form
+                $.ajax({
+                    type: 'POST',
+                    url: $(this).attr('action'),
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        // Handle the success response from the server
+                        //alert('Form submitted successfully!');
+                        $('#message-container').html('<p class="message success-message"><i class="fas fa-check-circle"></i> Form submitted successfully!</p>');
+                        $('#form')[0].reset(); // Reset the form after successful submission
+                       
+                    },
+                    error: function(xhr) {
+                        // Handle errors
+                        //alert('Form submission failed.');
+                        $('#message-container').html('<p class="message error-message"><i class="fas fa-times-circle"></i> Form submission failed.</p>');
+                        
+                    }
+                });
+            });
+            
+        });});
+ </script>
+
+ <script>
+    // Use jQuery.noConflict() to release control of the $ variable
+    var $j = jQuery.noConflict();
+
+    // Now use $j as your jQuery reference to avoid conflicts
+    $j(document).ready(function () {
+        $j.ajax({
+            // your AJAX settings here
+        });
+    });
+</script>
+
+
+ <style>
+    .message {
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+        display: inline-flex;
+        align-items: center;
+        
+    }
+    
+    .success-message {
+        color: green;
+        background-color: #e8f5e9;
+    }
+    
+    .error-message {
+        color: red;
+        background-color: #ffebee;
+    }
+    
+    .message i {
+        margin-right: 5px;
+        font-size: 18px;
+    }
+</style>
+
+</body>
+
+</html>

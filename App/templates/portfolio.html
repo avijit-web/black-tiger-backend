@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+
+{% block start %}
+
+
+    <!-- Banner Section -->
+    <section class="bannerSection bgImgProperty aboutBanner portfolioBanner">
+        <div class="bannerBg">
+            <img src="{{ banner.banner_image_mobile.url }}" alt="{{banner.image_alt_text|safe}}" loading="lazy" class="imgWH-100">
+        </div>
+        <div class="bannerCont">
+            <div class="container">
+                <div class="innerDiv">
+                    <p class="f28 fw200 capitalize colorWhite">{{banner.banner_super_text|safe}}</p>
+                    <h1 class="capitalize colorWhite fw800 mbtm40">{{banner.banner_main_text_part_one|safe}}
+                        <span class="colorYellow">{{banner.banner_main_text_part_two|safe}}</span>
+                    </h1>
+                    <div class="twoBtns">
+                        <a href="#portfolio-container" class="fw600 f20 capitalize colorBlack btn btn1 bgYellow">{{ banner.button_text|safe }}
+                            <span><i class="fa-solid fa-angle-right alignPadding"></i></span>
+                        </a>
+                        <div class="smVideoBtn hideDiv2">
+                            <button type="button" class="playPulse" data-bs-toggle="modal" data-bs-target="#videoModal">
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="videoBtn hideDiv">
+            <div class="container">
+                <button type="button" class="playPulse" data-bs-toggle="modal" data-bs-target="#videoModal">
+                    <i class="fa-solid fa-play"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        @media (min-width: 768px) {
+            .portfolioBanner {
+                background-image: url({{banner.banner_image_desktop.url}});
+                background-position-x: 46%;
+                padding: 250px 0;
+            }
+        }
+    </style>
+    <!-- Banner Section End -->
+
+
+    <!-- Portfolio Section -->
+    <section class="portfolioSection bgImgProperty" style="background-image: url(static/images/portfolio-bg.png);">
+        <div class="container" id="portfolio-container">
+            <div class="text-center">
+                <p class="bgYellow capitalize colorBlack f28 fw700 colorBgTitle">innovations unleashed</p>
+                <h2 class="capitalize colorBlack fw800 mbtm30">portfolio showcase</h2>
+                <p class="para1 colorBlack fw500 text-start">
+                    Explore a visual chronicle of our journey and expertise on our Portfolio Showcase page. Witness the
+                    fusion of imagination and skill in projects that define our commitment to excellence.
+                </p>
+                <div class="rightPot2 top0">
+                    <div class="potImg">
+                        <img src="static/images/pot-2.png" alt="#" loading="lazy" class="imgWH-100">
+                    </div>
+                </div>
+                <div class="portfolioCards">
+                    <div class="row g-4"  id="portfolio-section">
+                        {% for item in page_obj %}
+                        <div class="col-lg-4 col-md-6">
+                            <a href="{{item.url |default:'#'}}" class="cardItem">
+                                <div class="imgCont">
+                                    <img src="{{ item.image.url }}" alt="#" loading="lazy" class="imgWH-100">
+                                </div>
+                                <div class="textCont text-center fw500 f20 colorBlack">
+                                    {{ item.title }} 
+                                </div>
+                            </a>
+                        </div>
+                        {% endfor %}
+                        {% comment %} <div class="col-lg-4 col-md-6">
+                            <a href="#" class="cardItem">
+                                <div class="imgCont">
+                                    <img src="static/images/My E20 Dentist.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                </div>
+                                <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                    My E20 Dentist
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <a href="#" class="cardItem">
+                                <div class="imgCont">
+                                    <img src="static/images/pamsmotmk.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                </div>
+                                <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                    Pamsmotmk
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <a href="#" class="cardItem">
+                                <div class="imgCont">
+                                    <img src="static/images/My-E20-Dentist-logo.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                </div>
+                                <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                    My E20 Dentist
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <a href="#" class="cardItem">
+                                <div class="imgCont">
+                                    <img src="static/images/The-Silva-Method-logo.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                </div>
+                                <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                    The Silva Method
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <a href="#" class="cardItem">
+                                <div class="imgCont">
+                                    <img src="static/images/CJK-Deluxe-Cleaners-logo.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                </div>
+                                <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                    CJK-Deluxe-Cleaners
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <a href="#" class="cardItem">
+                                <div class="imgCont">
+                                    <img src="static/images/By-Angel-High-Quality-web.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                </div>
+                                <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                    By Angel High Quality
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <a href="#" class="cardItem">
+                                <div class="imgCont">
+                                    <img src="static/images/Lordan-Gifts.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                </div>
+                                <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                    Lordan Gifts
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <a href="#" class="cardItem">
+                                <div class="imgCont">
+                                    <img src="static/images/Gabriella-Beauty.jpg" alt="#" loading="lazy" class="imgWH-100">
+                                </div>
+                                <div class="textCont capitalize text-center fw500 f20 colorBlack">
+                                    Gabriella Beauty
+                                </div>
+                            </a>
+                        </div> {% endcomment %}
+                    </div>
+                </div>
+                <div class="paginationArea">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                            {% for page_number in page_obj.paginator.page_range %}
+                            <li class="page-item">
+                                <a class="page-link customPagination active" href="?page={{ page_number }}">{{ page_number }}</a>
+                             </li>
+                             {% endfor %}
+                            
+                        </ul>
+                    </nav>
+                </div>
+                
+                <script>
+                    jQuery(document).ready(function($) {
+                    $(document).ready(function () {
+                        $('.pagination a').on('click', function (event) {
+                            event.preventDefault();
+                            const pageUrl = $(this).attr('href');
+                            const urlParams = new URLSearchParams(pageUrl);
+                            const page = urlParams.get('page');  // Extract the page number from the URL
+                            $.ajax({
+                                url: `/portfolio2/${page}/`,
+                                success: function (response) {
+                                    $('#portfolio-section').html(response.html);
+                                }
+                            });
+                        });
+                    });});
+                </script>
+
+               
+            </div>
+        </div>
+    </section>
+    <!-- Portfolio Section End -->
+
+{% endblock %}

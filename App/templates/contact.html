@@ -1,0 +1,432 @@
+{% extends "base.html" %}
+
+{% block form_area %}
+{% endblock %}
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Tiger Ads</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="static/css/plugin/cdn.jsdelivr.net_npm_bootstrap@5.3.1_dist_css_bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <!-- Navbar Section -->
+    <header>
+        <section class="navbarSection">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg">
+                    <a class="navbar-brand" href="{% url 'home' %}">
+                        <img src="{{ site_settings.site_logo.url }}" alt="#" loading="lazy">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'home' %}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'about' %}">About BBTAA Team</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'services' %}">Our Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'portfolio' %}">Portfolio</a>
+                            </li>
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="#">Blog</a>
+                            </li> -->
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{% url 'contact' %}">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </section>
+    </header>
+    <!-- Navbar Section End --> {% endcomment %}
+
+    {% block start %}
+
+    
+    <!-- Banner Section -->
+    <section class="bannerSection bgImgProperty aboutBanner contactBanner">
+        <div class="bannerBg">
+            <img src="{{ banner.banner_image_mobile.url }}" alt="{{banner.image_alt_text|safe}}" loading="lazy" class="imgWH-100">
+        </div>
+        <div class="bannerCont">
+            <div class="container">
+                <div class="innerDiv">
+                    <h1 class="colorWhite fw800">{{banner.banner_main_text_part_one|safe}}
+                        <span class="colorYellow">{{banner.banner_main_text_part_two|safe}}</span>
+                    </h1>
+                    <p class="f20 fw300 colorWhite mbtm40">{{banner.banner_sub_text|safe}}</p>
+                    <div class="twoBtns">
+                        <a href="{% url 'portfolio' %}#portfolio-section" class="fw600 f20 capitalize colorBlack btn btn1 bgYellow">{{ banner.button_text|safe }}
+                            <span><i class="fa-solid fa-angle-right alignPadding"></i></span>
+                        </a>
+                        <div class="smVideoBtn hideDiv2">
+                            <button type="button" class="playPulse" data-bs-toggle="modal" data-bs-target="#videoModal">
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="videoBtn hideDiv">
+            <div class="container">
+                <button type="button" class="playPulse" data-bs-toggle="modal" data-bs-target="#videoModal">
+                    <i class="fa-solid fa-play"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        @media (min-width: 768px) {
+            .contactBanner {
+                background-image: url({{banner.banner_image_desktop.url}});
+                background-position-x: 56%;
+                padding: 250px 0;
+            }
+        }
+    </style>
+    <!-- Banner Section End -->
+
+
+    <!-- Contact Section -->
+    <div class="contactSection">
+        <div class="container">
+            <div class="rightPot2">
+                <div class="potImg">
+                    <img src="static/images/pot-2.png" alt="#" loading="lazy" class="imgWH-100">
+                </div>
+            </div>
+            <div class="row align-items-center flexColRev gap50">
+                <div class="col-lg-6">
+                    <div class="leftImg marginAuto">
+                        <img src="static/images/man1.png" alt="#" loading="lazy" class="imgWH-100">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="rightForm">
+                        <div class="formArea">
+                            <p class="p1 capitalize colorBlack bgYellow f28 fw700 colorBgTitle">discover</p>
+                            <h2 class="colorBlack fw800">How we can Help</h2>
+                            <h3 class="f20 fw700 colorBlack capitalize mbtm40">
+                                your business grow
+                            </h3>
+                            <form action="{% url 'contactPageForm' %}" method ="post" id="form">
+                                {% csrf_token %}
+                                <div class="row gy-4 mbtm40">
+                                    <div class="col-md-6">
+                                        <label for="inputName" class="form-label">Your Name</label>
+                                        <input type="text" class="form-control" name = "name" id="inputName"
+                                            placeholder="Type here..." required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="inputNum" class="form-label">Mobile Number</label>
+                                        <input type="text" class="form-control" name= "mobile" id="inputNum"
+                                            placeholder="Type here..."  required>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="inputEmail" class="form-label">Email ID</label>
+                                        <input type="email" class="form-control" name = "email" id="inputEmail"
+                                            placeholder="Type here..."  required>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="inputMsg" class="form-label">Message</label>
+                                        <textarea class="form-control" name= "message" id="inputMsg" placeholder="Type here..."
+                                            style="height: 120px;"  required></textarea>
+                                    </div>
+                                </div>
+                                <div class="formBtn">
+                                    <button type="submit" class="fw600 f20 capitalize colorBlack btn btn1 bgYellow">
+                                        send us
+                                        <span><i class="fa-solid fa-angle-right alignPadding"></i></span>
+                                    </button>
+                                </div>
+                                {% comment %} <div class="printMsg mt-4">
+                                    <p class="mb-0 d-flex align-items-baseline gap-2">
+                                        <span><i class="fa-solid fa-check bgGreen"></i></span>
+                                        <span class="colorBlack">Successful! Your form has been submitted. Thank you for
+                                            reaching
+                                            out to us.</span>
+                                    </p>
+                                    <p class="mb-0 d-flex align-items-baseline gap-2">
+                                        <span><i class="fa-solid fa-xmark bgRed"></i></span>
+                                        <span class="colorBlack">Oops! It seems there was an issue with submitting the
+                                            form. Please
+                                            try again or contact us directly.</span>
+                                    </p>
+                                </div> {% endcomment %}
+                            </form>
+                            <div id="message-container"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact Section End -->
+
+
+
+
+    {% endblock %}
+
+
+
+  {% comment %}   <!-- Footer Area -->
+    <footer>
+        <section class="footerSection bgImgProperty" style="background-image: url(static/images/footer-bg.jpg);">
+            <div class="topCont pbtm100 pt-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5 col-sm-12">
+                            <div class="leftSide">
+                                <div class="logoArea mbtm40">
+                                    <img src="{{ site_settings.site_logo.url }}" alt="#" loading="lazy">
+                                </div>
+                                <p class="colorWhite fw300 mbtm40">
+                                    We are the one-stop destination for a complete package of digital solutions,
+                                    tailored carefully & specifically for your needs. Our work speaks for us, more than
+                                    words ever could.
+                                </p>
+                                <ul class="resetUl d-flex align-items-center gap-5 outerUl">
+                                    <li>
+                                        <ul class="resetUl d-flex align-items-center gap-3">
+                                            <li>
+                                                <div class="footerIcon">
+                                                    <img src="static/images/footer-icon-27.svg" alt="#" loading="lazy"
+                                                        class="imgWH-100">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <a href="tel:{{ site_settings.phone_number }}" class="fw700 f20 colorWhite">{{ site_settings.phone_number }}</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul class="resetUl d-flex align-items-center gap-3">
+                                            <li>
+                                                <div class="footerIcon">
+                                                    <img src="static/images/footer-icon-28.svg" alt="#" loading="lazy"
+                                                        class="imgWH-100">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <a target="_blank" href="https://wa.me/{{ site_settings.whatsapp_number }}" class="fw700 f20 colorWhite">{{ site_settings.whatsapp_number }}</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-1 col-sm-12">
+                            <div class="middleBorder"></div>
+                        </div>
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="rightSide">
+                                <div class="row gy-5">
+                                    <div class="col-lg-6 col-sm-6">
+                                        <div class="rightCont">
+                                            <h3 class="capitalize colorWhite fw600 f20 mbtm30">quick links</h3>
+                                            <ul class="resetUl">
+                                                <li><a href="{% url 'home' %}" class="links">home</a></li>
+                                                <li><a href="{% url 'about' %}" class="links">about us</a></li>
+                                                <li><a href="{% url 'portfolio' %}" class="links">portfolio</a></li>
+                                                <li><a href="{% url 'contact' %}" class="links">contact us</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-sm-6">
+                                        <div class="rightCont">
+                                            <h3 class="capitalize colorWhite fw600 f20 mbtm30">our services</h3>
+                                            <ul class="resetUl">
+                                                <li>
+                                                    <a href="#" class="links">
+                                                        Logo Designing & Graphic Designing
+                                                    </a>
+                                                </li>
+                                                <li><a href="#" class="links">Website Designing Services</a></li>
+                                                <li><a href="#" class="links">Outdoor Advertising</a></li>
+                                                <li><a href="#" class="links">Brand Identity Solutions</a></li>
+                                                <li><a href="#" class="links">Digital Marketing</a></li>
+                                                <li><a href="#" class="links">Mobile App Development</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-sm-6">
+                                        <div class="rightCont">
+                                            <h3 class="capitalize colorWhite fw600 f20 mbtm30">contact info</h3>
+                                            <ul class="resetUl">
+                                                <li class="d-flex align-items-baseline gap-2">
+                                                    <div class="infoIcon">
+                                                        <img src="static/images/footer-icon-33.svg" alt="#" loading="lazy"
+                                                            class="imgWH-100">
+                                                    </div>
+                                                    <a target="_blank" href="https://www.google.com/maps/search/?api=1&query={{ site_settings.address }}" class="links">{{ site_settings.address }}</a>
+                                                </li>
+                                                <li class="d-flex align-items-baseline gap-2">
+                                                    <div class="infoIcon">
+                                                        <img src="static/images/footer-icon-34.svg" alt="#" loading="lazy"
+                                                            class="imgWH-100">
+                                                    </div>
+                                                    <a href="tel:{{ site_settings.phone_number }}" class="links">{{ site_settings.phone_number }}</a>
+                                                </li>
+                                                <li class="d-flex align-items-baseline gap-2">
+                                                    <div class="infoIcon">
+                                                        <img src="static/images/footer-icon-35.svg" alt="#" loading="lazy"
+                                                            class="imgWH-100">
+                                                    </div>
+                                                    <a href="mailto:{{ site_settings.email }}"
+                                                        class="colorGray f14">{{ site_settings.email }}</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-sm-6">
+                                        <div class="rightCont">
+                                            <h3 class="capitalize colorWhite fw600 f20 mbtm30">stay connected</h3>
+                                            <ul class="resetUl d-flex align-items-center gap-2">
+                                                <li class="mb-0">
+                                                    <a target="_blank"  href="{{ site_settings.social_media_links.facebook }}" class="footerIcon">
+                                                        <img src="static/images/footer-icon-29.svg" alt="#" loading="lazy"
+                                                            class="imgWH-100">
+                                                    </a>
+                                                </li>
+                                                <li class="mb-0">
+                                                    <a target="_blank" href="{{ site_settings.social_media_links.X }}" class="footerIcon">
+                                                        <img src="static/images/footer-icon-30.svg" alt="#" loading="lazy"
+                                                            class="imgWH-100">
+                                                    </a>
+                                                </li>
+                                                <li class="mb-0">
+                                                    <a target="_blank" href="{{ site_settings.social_media_links.instagram }}" class="footerIcon">
+                                                        <img src="static/images/footer-icon-31.svg" alt="#" loading="lazy"
+                                                            class="imgWH-100">
+                                                    </a>
+                                                </li>
+                                                <li class="mb-0">
+                                                    <a target="_blank" href="{{ site_settings.social_media_links.linkedin }}" class="footerIcon">
+                                                        <img src="static/images/footer-icon-32.svg" alt="#" loading="lazy"
+                                                            class="imgWH-100">
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btmCont">
+                <div class="container">
+                    <div class="contArea py-3 colorWhite fw300 f14 text-center">
+                        Copyright 2018-2023 Black Tiger Advertising is a trading name for BBTAA team ltd.
+                        Company Number: 11944304, Vat Reg. No: 385 788 623. All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+    <!-- Footer Area End -->
+
+
+    <!-- Video Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <video autoplay muted loop class="bannerVideo">
+                        <source src="static/images/Tiger-Slider.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Video Modal End -->
+
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="static/js/plugin/cdn.jsdelivr.net_npm_bootstrap@5.3.1_dist_js_bootstrap.bundle.min.js"></script>
+    <script src="static/js/custom.js"></script>
+</body>
+
+<script>
+    $(document).ready(function() {
+        $('#ConatctForm').submit(function(event) {
+            event.preventDefault(); // Prevent the regular form submission
+    
+            $.ajax({
+                type: 'POST',
+                url: $(this).attr('action'),
+                data: $(this).serialize(),
+                success: function(response) {
+                    // Handle the success response from the server
+                    //alert('Form submitted successfully!');
+                    $('#message-container').html('<p class="message success-message"><i class="fas fa-check-circle"></i> Form submitted successfully!</p>');
+                    $('#ConatctForm')[0].reset(); // Reset the form after successful submission
+
+                    
+                },
+                error: function(xhr) {
+                    // Handle errors
+                   // alert('Form submission failed.');
+                   $('#message-container').html('<p class="message error-message"><i class="fas fa-times-circle"></i> Form submission failed.</p>');
+
+                   
+                }
+            });
+        });
+        
+    });
+</script>
+<style>
+    .message {
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+        display: inline-flex;
+        align-items: center;
+    }
+    
+    .success-message {
+        color: green;
+        background-color: #e8f5e9;
+    }
+    
+    .error-message {
+        color: red;
+        background-color: #ffebee;
+    }
+    
+    .message i {
+        margin-right: 5px;
+        font-size: 18px;
+    }
+</style>
+</html> {% endcomment %}

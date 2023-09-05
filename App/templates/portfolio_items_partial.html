@@ -1,0 +1,12 @@
+{% for item in page_obj %}
+<div class="col-lg-4 col-md-6">
+    <a href="#" class="cardItem">
+        <div class="imgCont">
+            <img src="{{ item.image.url }}" alt="#" loading="lazy" class="imgWH-100">
+        </div>
+        <div class="textCont capitalize text-center fw500 f20 colorBlack">
+            {{ item.title }}
+        </div>
+    </a>
+</div>
+{% endfor %}
